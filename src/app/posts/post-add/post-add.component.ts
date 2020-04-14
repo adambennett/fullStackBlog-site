@@ -59,10 +59,4 @@ export class PostAddComponent implements OnInit, OnDestroy {
       this.gotoList();
     }, error => console.error(error));
   }
-
-  remove(href) {
-    this.postService.remove(href).subscribe(result => {
-      this.gotoList();
-    }, error => console.error(error));
-  }
 }
