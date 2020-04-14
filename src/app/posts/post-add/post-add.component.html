@@ -21,7 +21,7 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-        <mat-select placeholder="Board" [formControl]="formControlObj" [(ngModel)]="selectedValue" name="board">
+        <mat-select placeholder="Board" [formControl]="formControlObj" [(ngModel)]="selectedValue">
           <mat-option *ngFor="let board of boards" [value]="board.id">
             {{board.title}}
           </mat-option>

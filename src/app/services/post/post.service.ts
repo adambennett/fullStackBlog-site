@@ -20,19 +20,12 @@ export class PostService {
     return this.http.get(this.API + 'api/posts/' + id);
   }
 
-  getBoard(id: number) {
-    return this.http.get('https://loopy-api.herokuapp.com/api/boards/actual/' + id);
-  }
-
   save(post: any, id: number): Observable<any> {
-    console.log('SELECTED ID: ' + id);
-    post.board = this.getBoard(id);
-    console.log('POST BOARD: ' + post.board.title);
     let result: Observable<any>;
     if (post.href) {
       result = this.http.put(post.href, post);
     } else {
-      result = this.http.post(this.API + 'api/posts/', post);
+      result = this.http.post(this.API + 'api/posts/' + id, post);
     }
     return result;
   }
