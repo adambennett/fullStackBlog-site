@@ -21,7 +21,7 @@ export class PostService {
   }
 
   getBoard(id: number) {
-    return this.http.get('https://loopy-api.herokuapp.com/boards/actual/' + id);
+    return this.http.get('https://loopy-api.herokuapp.com/api/boards/actual/' + id);
   }
 
   save(post: any, id: number): Observable<any> {
