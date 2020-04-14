@@ -8,8 +8,10 @@
         <h3 mat-line>{{post.text}}</h3>
         <h3 mat-line><br></h3>
         <h3 mat-line>{{post.author}} @ {{post.createTimestamp}}</h3>
-        <a mat-button [routerLink]="['/post-edit', post.id]">Edit</a>
-        <a mat-button [routerLink]="['/post-delete', post.id]">Delete</a>
+        <a mat-button [routerLink]="['/post-comment']" class = "postButton">Comment</a>
+        <a mat-button [routerLink]="['/post-view-comments']" class = "postButton">View Comments</a>
+        <a mat-button [routerLink]="['/post-edit', post.id]" class = "postButton">Edit</a>
+        <a mat-button [routerLink]="['/post-delete', post.id]" class = "postButton">Delete</a>
       </mat-list-item>
     </mat-list>
   </mat-card-content>

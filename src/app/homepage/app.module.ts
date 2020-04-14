@@ -20,6 +20,8 @@ import { BoardEditComponent } from '../boards/board-edit/board-edit.component';
 import { BoardListComponent } from '../boards/board-list/board-list.component';
 import { BoardViewComponent } from '../boards/board-view/board-view.component';
 import {MatSelectModule} from "@angular/material/select";
+import { PostCommentComponent } from '../posts/post-comment/post-comment.component';
+import { PostViewCommentsComponent } from '../posts/post-view-comments/post-view-comments.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/board-list', pathMatch: 'full' },
@@ -30,6 +32,14 @@ const appRoutes: Routes = [
   {
     path: 'post-add',
     component: PostAddComponent
+  },
+  {
+    path: 'post-comment',
+    component: PostCommentComponent
+  },
+  {
+    path: 'post-view-comments',
+    component: PostViewCommentsComponent
   },
   {
     path: 'post-delete/:id',
@@ -72,7 +82,9 @@ const appRoutes: Routes = [
     BoardDeleteComponent,
     BoardEditComponent,
     BoardListComponent,
-    BoardViewComponent
+    BoardViewComponent,
+    PostCommentComponent,
+    PostViewCommentsComponent
   ],
   imports: [
     BrowserModule,
