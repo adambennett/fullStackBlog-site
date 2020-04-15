@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormControl, NgForm} from '@angular/forms';
+import {Subscription} from 'rxjs/Subscription';
+import {ActivatedRoute, Router} from '@angular/router';
+import {PostService} from '../../services/post/post.service';
+import {BoardService} from '../../services/board/board.service';
+import {CommentService} from '../../services/comment/comment.service';
 
 @Component({
   selector: 'app-post-comment',
@@ -7,9 +13,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostCommentComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

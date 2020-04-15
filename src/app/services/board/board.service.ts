@@ -8,20 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class BoardService {
 
-  public API = 'https://loopy-api.herokuapp.com/';
+  // public API = 'https://loopy-api.herokuapp.com/api/';
+  public API = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) { }
 
   getBoards(): Observable<any> {
-    return this.http.get(this.API + 'api/boards/list');
-  }
-
-  getPostsFromBoard(id: number): Observable<any> {
-    return this.http.get(this.API + 'api/boards/posts/' + id);
+    return this.http.get(this.API + 'boards/list');
   }
 
   get(id: number) {
-    return this.http.get(this.API + 'api/boards/' + id);
+    return this.http.get(this.API + 'boards/' + id);
   }
 
   save(post: any): Observable<any> {
@@ -29,7 +26,7 @@ export class BoardService {
     if (post.href) {
       result = this.http.put(post.href, post);
     } else {
-      result = this.http.post(this.API + 'api/boards/', post);
+      result = this.http.post(this.API + 'boards/', post);
     }
     return result;
   }

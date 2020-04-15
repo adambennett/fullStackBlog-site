@@ -1,1 +1,15 @@
-<p>post-view-comments works!</p>
+<mat-card>
+  <mat-card-header>Comments on {{post.header}}</mat-card-header>
+  <mat-card-content>
+    <mat-list dense>
+      <mat-list-item *ngFor="let comment of comments">
+        <h3 mat-line>{{comment.score}} :: {{comment.text}}</h3>
+        <h3 mat-line><br></h3>
+        <h3 mat-line>{{comment.author}} @ {{comment.createTimestamp}}</h3>
+        <a mat-button [routerLink]="['/post-edit', post.id]" class = "postButton">Edit</a>
+        <a mat-button [routerLink]="['/post-delete', post.id]" class = "postButton">Delete</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <button mat-fab color="primary" [routerLink]="['/board-view', board.id]" class = "spaced">Back</button>
+</mat-card>
