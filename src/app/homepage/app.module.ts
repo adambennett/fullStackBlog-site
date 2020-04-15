@@ -19,7 +19,7 @@ import { BoardDeleteComponent } from '../boards/board-delete/board-delete.compon
 import { BoardEditComponent } from '../boards/board-edit/board-edit.component';
 import { BoardListComponent } from '../boards/board-list/board-list.component';
 import { BoardViewComponent } from '../boards/board-view/board-view.component';
-import {MatSelectModule} from "@angular/material/select";
+import {MatSelectModule} from '@angular/material/select';
 import { PostCommentComponent } from '../posts/post-comment/post-comment.component';
 import { PostViewCommentsComponent } from '../posts/post-view-comments/post-view-comments.component';
 
