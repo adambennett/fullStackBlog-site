@@ -5,16 +5,60 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {PostService} from '../../services/post/post.service';
 import {BoardService} from '../../services/board/board.service';
 import {CommentService} from '../../services/comment/comment.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-comment',
   templateUrl: './post-comment.component.html',
   styleUrls: ['./post-comment.component.scss']
 })
-export class PostCommentComponent implements OnInit {
+export class PostCommentComponent implements OnInit, OnDestroy {
 
-  constructor() {}
+  formControlObj: FormControl;
+  post: any = {};
+  comment: any;
+  sub: Subscription;
 
-  ngOnInit(): void {}
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private postService: PostService,
+              private commentService: CommentService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
+
+  backClicked() {
+    this._location.back();
+  }
+
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      const id = params.id;
+      if (id) {
+        this.postService.get(id).subscribe((post: any) => {
+          if (post) {
+            this.post = post;
+            this.post.href = post._links.self.href;
+          } else {
+            console.log(`Post with id '${id}' not found, returning to list`);
+            this.gotoList();
+          }
+        });
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  gotoList() {
+    this.router.navigate(['/board-list']);
+  }
+
+  save(form: NgForm) {
+    this.commentService.save(form, this.post.id).subscribe(result => {
+      this.gotoList();
+    }, error => console.error(error));
+  }
 
 }

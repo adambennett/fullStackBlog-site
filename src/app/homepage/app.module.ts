@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     component: PostAddComponent
   },
   {
-    path: 'post-comment',
+    path: 'post-comment/:id',
     component: PostCommentComponent
   },
   {
