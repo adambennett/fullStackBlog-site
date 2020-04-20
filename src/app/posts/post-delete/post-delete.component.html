@@ -1,1 +1,15 @@
-<p>DELETE POST FUNCTIONALITY TO BE ADDED...</p>
+<mat-card>
+  <form #postForm="ngForm" (ngSubmit)="remove()">
+    <mat-card-header>
+      <mat-card-title><h2>Are you sure you want to delete this post?</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{post.header}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!postForm.form.valid">Confirm</button>
+      <a mat-button routerLink="/post-list">Cancel</a>
+    </mat-card-actions>
+  </form>
+</mat-card>
