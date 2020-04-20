@@ -16,8 +16,9 @@ export class PostCommentComponent implements OnInit, OnDestroy {
 
   formControlObj: FormControl;
   post: any = {};
-  comment: any;
   sub: Subscription;
+  commentAuth: any;
+  commentTxt: any;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -37,7 +38,6 @@ export class PostCommentComponent implements OnInit, OnDestroy {
         this.postService.get(id).subscribe((post: any) => {
           if (post) {
             this.post = post;
-            this.post.href = post._links.self.href;
           } else {
             console.log(`Post with id '${id}' not found, returning to list`);
             this.gotoList();
@@ -52,7 +52,7 @@ export class PostCommentComponent implements OnInit, OnDestroy {
   }
 
   gotoList() {
-    this.router.navigate(['/board-list']);
+    this._location.back();
   }
 
   save(form: NgForm) {
