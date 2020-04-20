@@ -4,7 +4,6 @@
       <mat-card-title><h2>Edit Post - {{post.header}}</h2></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <input type="hidden" name="href" [(ngModel)]="post.href">
       <mat-form-field>
         <input matInput placeholder="Post Name" [(ngModel)]="post.header"
                required name="header" #header>

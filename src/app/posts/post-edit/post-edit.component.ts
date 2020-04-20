@@ -6,6 +6,19 @@ import { NgForm } from '@angular/forms';
 import { PostService } from '../../services/post/post.service';
 import {Location} from '@angular/common';
 
+
+export class Post {
+  id: number;
+  board: any;
+  comments: Array<any>;
+  header: string;
+  author: string;
+  text: string;
+  imageUrl: string;
+  createTimestamp: Date;
+  updateTimestamp: Date;
+}
+
 @Component({
   selector: 'app-post-edit',
   templateUrl: './post-edit.component.html',
@@ -13,7 +26,7 @@ import {Location} from '@angular/common';
 })
 export class PostEditComponent implements OnInit, OnDestroy {
 
-  post: any = {};
+  post: Post;
 
   sub: Subscription;
 
@@ -26,7 +39,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
   ngOnInit() {this.sub = this.route.params.subscribe(params => {
     const id = params.id;
     if (id) {
-      this.postService.get(id).subscribe((post: any) => {
+      this.postService.get(id).subscribe((post: Post) => {
         if (post) {
           this.post = post;
         } else {
@@ -42,14 +55,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  save(form: NgForm) {
-    this.postService.remove(this.post).subscribe(result => {
-      this.backClicked();
-    }, error => console.error(error));
-  }
-
   edit(){
-    console.log(this.post);
     this.postService.update(this.post, this.post.id);
     this.backClicked();
   }

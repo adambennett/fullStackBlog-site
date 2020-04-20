@@ -2,6 +2,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
+export class Post {
+  id: number;
+  board: any;
+  comments: Array<any>;
+  header: string;
+  author: string;
+  text: string;
+  imageUrl: string;
+  createTimestamp: Date;
+  updateTimestamp: Date;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +46,9 @@ export class PostService {
     return this.http.delete(href);
   }
 
-  update(post: any, id: number){
+  update(post: Post, id: number){
+    console.log('Post ID: ' + id);
+    console.log('Post being updated: ' + post);
     this.http.put(this.API + 'posts/' + id, post);
   }
 }
