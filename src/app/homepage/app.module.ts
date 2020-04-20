@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from '../services/post/post.service';
 import { PostListComponent } from '../posts/post-list/post-list.component';
-import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatFormFieldModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GiphyService } from '../services/giphy.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -22,6 +21,12 @@ import { BoardViewComponent } from '../boards/board-view/board-view.component';
 import {MatSelectModule} from '@angular/material/select';
 import { PostCommentComponent } from '../posts/post-comment/post-comment.component';
 import { PostViewCommentsComponent } from '../posts/post-view-comments/post-view-comments.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/board-list', pathMatch: 'full' },
@@ -87,20 +92,20 @@ const appRoutes: Routes = [
     PostViewCommentsComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule,
     MatListModule,
     MatToolbarModule,
     FormsModule,
     MatFormFieldModule,
     RouterModule.forRoot(appRoutes),
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [PostService, GiphyService],
   bootstrap: [AppComponent]
