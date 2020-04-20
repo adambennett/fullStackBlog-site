@@ -7,10 +7,9 @@
     <button mat-menu-item [routerLink]="['/']" class = "homeBtn">Home</button>
     <button mat-menu-item [matMenuTriggerFor]="accountMenu" class = "boardBtn">Account</button>
     <mat-menu #accountMenu="matMenu">
-      <button mat-menu-item [routerLink]="['/user-login']">Login</button>
-      <button mat-menu-item [routerLink]="['/user-register']">Register</button>
-      <button mat-menu-item [routerLink]="['/']">Logout</button>
-      <button mat-menu-item [routerLink]="['/user-settings']">Account Settings</button>
+      <button mat-menu-item [routerLink]="['/user-login', 1]">Login/Logout</button>
+      <button mat-menu-item [routerLink]="['/user-register', 1]">Register</button>
+      <button mat-menu-item [routerLink]="['/user-settings', 1]">Account Settings</button>
     </mat-menu>
     <button mat-menu-item [matMenuTriggerFor]="boardMenu" class = "boardBtn">Boards</button>
     <mat-menu #boardMenu="matMenu">

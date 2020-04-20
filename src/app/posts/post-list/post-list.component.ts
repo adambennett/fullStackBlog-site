@@ -27,7 +27,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.postService.getPosts().subscribe(data => {
       this.posts = data;
-      this.dataSource = new MatTableDataSource<any>(this.posts);
+      this.dataSource = new MatTableDataSource<any>(this.posts.slice().reverse());
       this.dataSource.paginator = this.paginator;
       this.dataSource.sortingDataAccessor = (item, property) => {
         switch (property) {

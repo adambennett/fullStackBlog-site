@@ -1,1 +1,31 @@
-{{post.text}}
+<mat-card>
+  <mat-card-content>
+    {{post.header}}
+    <br><br><br>
+    {{post.text}}
+    <br><br><br>
+    {{post.author}} @ {{post.createTimestamp}}
+    <br><br>
+    Last Updated: {{post.updateTimestamp}}
+    <br><br>
+  </mat-card-content>
+  <mat-card-content>
+    <button mat-raised-button color="accent" [routerLink]="['/post-comment', post.id]" class="postBtn">Comment</button>
+    <button mat-raised-button color="secondary" [routerLink]="['/post-edit', post.id]" class="postBtn">Edit</button>
+    <button mat-raised-button color="warn" [routerLink]="['/post-delete', post.id]" class="postBtn">Delete</button>
+    <br><br>
+  </mat-card-content>
+  <mat-card-content>
+    Comments
+    <br><br>
+    <mat-list dense>
+      <mat-list-item *ngFor="let comment of post.comments">
+        <h3 mat-line>{{comment.text}}</h3>
+        <h3 mat-line><br></h3>
+        <h3 mat-line>{{comment.author}} @ {{comment.createTimestamp}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+

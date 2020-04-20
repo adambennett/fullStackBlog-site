@@ -32,6 +32,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PostViewComponent } from '../posts/post-view/post-view.component';
+import { UserLoginComponent } from '../account/user-login/user-login.component';
+import { UserRegisterComponent } from '../account/user-register/user-register.component';
+import { UserSettingsComponent } from '../account/user-settings/user-settings.component';
+import { SearchPostTitleComponent } from '../search/search-post-title/search-post-title.component';
+import { SearchPostAuthorComponent } from '../search/search-post-author/search-post-author.component';
+import { SearchPostTimeComponent } from '../search/search-post-time/search-post-time.component';
+import { SearchPostTextComponent } from '../search/search-post-text/search-post-text.component';
+import { SearchTagsComponent } from '../search/search-tags/search-tags.component';
+import { SearchBoardsComponent } from '../search/search-boards/search-boards.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/board-list', pathMatch: 'full' },
@@ -82,6 +91,42 @@ const appRoutes: Routes = [
   {
     path: 'board-edit/:id',
     component: BoardEditComponent
+  },
+  {
+    path: 'user-login/:id',
+    component: UserLoginComponent
+  },
+  {
+    path: 'user-register/:id',
+    component: UserRegisterComponent
+  },
+  {
+    path: 'user-settings/:id',
+    component: UserSettingsComponent
+  },
+  {
+    path: 'search-boards',
+    component: SearchBoardsComponent
+  },
+  {
+    path: 'search-tags',
+    component: SearchTagsComponent
+  },
+  {
+    path: 'search-post-author',
+    component: SearchPostAuthorComponent
+  },
+  {
+    path: 'search-post-text',
+    component: SearchPostTextComponent
+  },
+  {
+    path: 'search-post-time',
+    component: SearchPostTimeComponent
+  },
+  {
+    path: 'search-post-title',
+    component: SearchPostTitleComponent
   }
 ];
 
@@ -99,7 +144,16 @@ const appRoutes: Routes = [
     BoardViewComponent,
     PostCommentComponent,
     PostViewCommentsComponent,
-    PostViewComponent
+    PostViewComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
+    UserSettingsComponent,
+    SearchPostTitleComponent,
+    SearchPostAuthorComponent,
+    SearchPostTimeComponent,
+    SearchPostTextComponent,
+    SearchTagsComponent,
+    SearchBoardsComponent
   ],
   imports: [
     HttpClientModule,
