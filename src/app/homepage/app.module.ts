@@ -28,6 +28,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PostViewComponent } from '../posts/post-view/post-view.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/board-list', pathMatch: 'full' },
@@ -54,6 +58,10 @@ const appRoutes: Routes = [
   {
     path: 'post-edit/:id',
     component: PostEditComponent
+  },
+  {
+    path: 'post-view/:id',
+    component: PostViewComponent
   },
   {
     path: 'board-list',
@@ -90,7 +98,8 @@ const appRoutes: Routes = [
     BoardListComponent,
     BoardViewComponent,
     PostCommentComponent,
-    PostViewCommentsComponent
+    PostViewCommentsComponent,
+    PostViewComponent
   ],
   imports: [
     HttpClientModule,
@@ -107,7 +116,10 @@ const appRoutes: Routes = [
     MatSelectModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [PostService, GiphyService],
   bootstrap: [AppComponent]

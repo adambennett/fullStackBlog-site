@@ -1,21 +1,27 @@
-<mat-card>
-  <mat-card-header>Posts</mat-card-header>
-  <mat-card-content>
-    <mat-list dense>
-      <mat-list-item *ngFor="let post of posts">
-        <h3 mat-line>Post #{{post.id}}: {{post.header}}</h3>
-            <h3 mat-line><br></h3>
-        <h3 mat-line>{{post.text}}</h3>
-            <h3 mat-line><br></h3>
-        <h3 mat-line>{{post.author}} @ {{post.createTimestamp}} in {{post.board.title}}</h3>
-        <a mat-button [routerLink]="['/post-comment', post.id]" class = "postButton">Comment</a>
-        <a mat-button [routerLink]="['/post-view-comments', post.id]" class = "postButton">View Comments</a>
-        <a mat-button [routerLink]="['/post-edit', post.id]" class = "postButton">Edit</a>
-        <a mat-button [routerLink]="['/post-delete', post.id]" class = "postButton">Delete</a>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="header">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Title </th>
+    <td mat-cell *matCellDef="let post" class="table-row">
+      <button mat-raised-button color="accent" [routerLink]="['/post-view', post.id]">{{post.header}}</button>
+    </td>
+  </ng-container>
 
-  <button mat-fab color="primary" [routerLink]="['/post-add']" class = "spaced">Submit</button>
-  <button mat-fab color="primary" [routerLink]="['/board-list']" class = "spaced">Home</button>
-</mat-card>
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Author </th>
+    <td mat-cell *matCellDef="let post" class="table-row"> {{post.author}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="createTimestamp">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Time </th>
+    <td mat-cell *matCellDef="let post" class="table-row"> {{post.createTimestamp}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="board.title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Board </th>
+    <td mat-cell *matCellDef="let post" class="table-row"> {{post.board.title}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" [showFirstLastButtons]="true"></mat-paginator>

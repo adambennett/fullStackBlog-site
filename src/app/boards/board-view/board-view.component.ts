@@ -1,7 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {BoardService} from '../../services/board/board.service';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {CommentService} from '../../services/comment/comment.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-board-view',
@@ -10,13 +15,20 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class BoardViewComponent implements OnInit, OnDestroy {
 
+  displayedColumsn: string[] = ['name', 'posts'];
   board: any = {};
   posts: Array<any>;
   sub: Subscription;
+  dataSource: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private boardService: BoardService) { }
+              private boardService: BoardService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -35,14 +47,16 @@ export class BoardViewComponent implements OnInit, OnDestroy {
     });
   }
 
-
+  backClicked() {
+    this._location.back();
+  }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
   gotoList() {
-    this.router.navigate(['/board-list']);
+    this.backClicked();
   }
 
 }

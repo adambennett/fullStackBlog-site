@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BoardListComponent } from './board-list.component';
+import {MatTableModule} from '@angular/material/table';
 
 describe('BoardListComponent', () => {
   let component: BoardListComponent;
@@ -8,7 +9,8 @@ describe('BoardListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoardListComponent ]
+      declarations: [ BoardListComponent ],
+      imports: [ MatTableModule ]
     })
     .compileComponents();
   }));

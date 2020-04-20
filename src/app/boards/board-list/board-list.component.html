@@ -1,18 +1,16 @@
-<mat-card>
-  <mat-card-header>Boards</mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item *ngFor="let board of boards">
-        <div style="width: 100%; text-align: left;">
-          <button mat-raised-button color="primary" [routerLink]="['/board-view', board.id]">{{board.title}}</button>
-        </div>
-        <a mat-button [routerLink]="['/board-edit', board.id]">Edit</a>
-        <a mat-button [routerLink]="['/board-delete', board.id]">Delete</a>
-        <h3 mat-line><br></h3>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Board </th>
+    <td mat-cell *matCellDef="let board" class="table-row">
+      <button mat-raised-button color="accent" [routerLink]="['/board-view', board.id]">{{board.title}}</button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="posts">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Posts </th>
+    <td mat-cell *matCellDef="let board" class="table-row"> {{board.posts.length}} </td>
+  </ng-container>
 
-  <button mat-fab color="primary" [routerLink]="['/board-add']" class = "spaced">Submit</button>
-  <button mat-fab color="primary" [routerLink]="['/post-list']" class = "spaced">Posts</button>
-</mat-card>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" [showFirstLastButtons]="true"></mat-paginator>

@@ -1,3 +1,48 @@
 .spaced {
   margin: 25px;
 }
+
+mat-table{
+  width: 100%;
+}
+
+.table-row {
+  height: 5px !important;
+  font-size: 14pt !important;
+}
+
+.table-header-row {
+  height: 5px !important;
+  font-size: 30pt !important;
+}
+
+.mat-column-title {
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 5% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-posts {
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
