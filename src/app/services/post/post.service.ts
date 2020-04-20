@@ -8,8 +8,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class PostService {
 
-  // public API = 'https://loopy-api.herokuapp.com/api/';
-  public API = 'http://localhost:8080/api/';
+  public API = 'https://loopy-api.herokuapp.com/api/';
+  // public API = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) { }
 

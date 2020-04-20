@@ -60,5 +60,4 @@ export class PostCommentComponent implements OnInit, OnDestroy {
       this.gotoList();
     }, error => console.error(error));
   }
-
 }

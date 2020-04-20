@@ -13,7 +13,7 @@
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit"
               [disabled]="!postForm.form.valid">Save</button>
-      <a mat-button routerLink="/post-list">Cancel</a>
+      <a mat-button (click)="backClicked()">Cancel</a>
     </mat-card-actions>
   </form>
 </mat-card>

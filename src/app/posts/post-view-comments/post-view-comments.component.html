@@ -11,5 +11,5 @@
       </mat-list-item>
     </mat-list>
   </mat-card-content>
-  <button mat-fab color="primary" [routerLink]="['/board-view', board.id]" class = "spaced">Back</button>
+  <button mat-fab color="primary" (click)="backClicked()" class = "spaced">Back</button>
 </mat-card>

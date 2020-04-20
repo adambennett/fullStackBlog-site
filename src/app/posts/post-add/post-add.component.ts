@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { PostService } from '../../services/post/post.service';
 import {BoardService} from '../../services/board/board.service';
 import { FormControl } from '@angular/forms';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-add',
@@ -23,7 +24,9 @@ export class PostAddComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private postService: PostService,
-              private boardService: BoardService) { }
+              private boardService: BoardService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {
     this.boardService.getBoards().subscribe(data => {
@@ -58,5 +61,9 @@ export class PostAddComponent implements OnInit, OnDestroy {
     this.postService.save(form, id).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
+  }
+
+  backClicked() {
+    this._location.back();
   }
 }

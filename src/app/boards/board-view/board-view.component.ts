@@ -15,7 +15,7 @@ import {Location} from '@angular/common';
 })
 export class BoardViewComponent implements OnInit, OnDestroy {
 
-  displayedColumsn: string[] = ['name', 'posts'];
+  displayedColumns: string[] = ['header', 'author', 'comments', 'createTimestamp' ];
   board: any = {};
   posts: Array<any>;
   sub: Subscription;
@@ -37,7 +37,9 @@ export class BoardViewComponent implements OnInit, OnDestroy {
         this.boardService.get(id).subscribe((board: any) => {
           if (board) {
             this.posts = board.posts;
-           // this.board.href = board._links.self.href;
+            this.dataSource = new MatTableDataSource<any>(this.posts);
+            this.dataSource.paginator = this.paginator;
+            this.dataSource.sort = this.sort;
           } else {
             console.log(`Board with id '${id}' not found, returning to list`);
             this.gotoList();

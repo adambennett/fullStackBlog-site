@@ -3,6 +3,8 @@ import {PostService} from '../../services/post/post.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import {BoardService} from '../../services/board/board.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-list',
@@ -12,13 +14,15 @@ import {MatSort} from '@angular/material/sort';
 export class PostListComponent implements OnInit {
 
   posts: Array<any>;
-  displayedColumns: string[] = ['header', 'author', 'createTimestamp', 'board.title'];
+  displayedColumns: string[] = ['header', 'author', 'board.title', 'comments', 'createTimestamp' ];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {
     this.postService.getPosts().subscribe(data => {
@@ -33,6 +37,10 @@ export class PostListComponent implements OnInit {
       };
       this.dataSource.sort = this.sort;
     });
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 }

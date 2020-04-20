@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PostService} from '../../services/post/post.service';
 import {BoardService} from '../../services/board/board.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-board-add',
@@ -21,7 +22,9 @@ export class BoardAddComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private postService: PostService,
-              private boardService: BoardService) { }
+              private boardService: BoardService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -52,6 +55,10 @@ export class BoardAddComponent implements OnInit, OnDestroy {
     this.boardService.save(form).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 }

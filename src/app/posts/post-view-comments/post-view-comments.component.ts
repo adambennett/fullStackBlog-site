@@ -3,6 +3,8 @@ import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CommentService} from '../../services/comment/comment.service';
 import {PostService} from '../../services/post/post.service';
+import {BoardService} from '../../services/board/board.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-view-comments',
@@ -18,7 +20,9 @@ export class PostViewCommentsComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private postService: PostService) { }
+              private postService: PostService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -46,6 +50,10 @@ export class PostViewCommentsComponent implements OnInit, OnDestroy {
 
   gotoList() {
     this.router.navigate(['/board-list']);
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 }

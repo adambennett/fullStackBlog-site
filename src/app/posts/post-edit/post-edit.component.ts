@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GiphyService } from '../../services/giphy.service';
 import { NgForm } from '@angular/forms';
 import { PostService } from '../../services/post/post.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-post-edit',
@@ -19,7 +20,8 @@ export class PostEditComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private postService: PostService,
-              private giphyService: GiphyService) { }
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {this.sub = this.route.params.subscribe(params => {
     const id = params.id;
@@ -27,11 +29,9 @@ export class PostEditComponent implements OnInit, OnDestroy {
       this.postService.get(id).subscribe((post: any) => {
         if (post) {
           this.post = post;
-          // this.post.href = post._links.self.href;
-          // this.giphyService.get(post.name).subscribe(url => post.giphyUrl = url);
         } else {
           console.log(`Post with id '${id}' not found, returning to list`);
-          this.gotoList();
+          this.backClicked();
         }
       });
     }
@@ -42,26 +42,20 @@ export class PostEditComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  gotoList() {
-    this.router.navigate(['/post-list']);
-  }
-
   save(form: NgForm) {
     this.postService.remove(this.post).subscribe(result => {
-      this.gotoList();
+      this.backClicked();
     }, error => console.error(error));
   }
 
   edit(){
     console.log(this.post);
     this.postService.update(this.post, this.post.id);
-    this.gotoList();
+    this.backClicked();
   }
 
-  // remove(href) {
-  //   this.postService.remove(href).subscribe(result => {
-  //     this.gotoList();
-  //   }, error => console.error(error));
-  // }
+  backClicked() {
+    this._location.back();
+  }
 
 }

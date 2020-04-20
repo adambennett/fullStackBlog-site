@@ -1,24 +1,30 @@
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
   <ng-container matColumnDef="header">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Title </th>
-    <td mat-cell *matCellDef="let post" class="table-row">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="title-header"> Title </th>
+    <td mat-cell *matCellDef="let post" class="title-row">
       <button mat-raised-button color="accent" [routerLink]="['/post-view', post.id]">{{post.header}}</button>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="author">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Author </th>
-    <td mat-cell *matCellDef="let post" class="table-row"> {{post.author}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="author-header"> Author </th>
+    <td mat-cell *matCellDef="let post" class="author-row"> {{post.author}} </td>
   </ng-container>
 
   <ng-container matColumnDef="createTimestamp">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Time </th>
-    <td mat-cell *matCellDef="let post" class="table-row"> {{post.createTimestamp}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="time-header"> Time </th>
+    <td mat-cell *matCellDef="let post" class="time-row"> {{post.createTimestamp}} </td>
   </ng-container>
 
   <ng-container matColumnDef="board.title">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-header-row"> Board </th>
-    <td mat-cell *matCellDef="let post" class="table-row"> {{post.board.title}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="board-header"> Board </th>
+    <td mat-cell *matCellDef="let post" class="board-row"> {{post.board.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="comments">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="comment-header"> Comments </th>
+    <td mat-cell *matCellDef="let post" class="comment-row"> {{post.comments.length}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

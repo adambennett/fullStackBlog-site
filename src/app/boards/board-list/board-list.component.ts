@@ -3,6 +3,7 @@ import {BoardService} from '../../services/board/board.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-board-list',
@@ -18,7 +19,9 @@ export class BoardListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private boardService: BoardService) { }
+  constructor(private boardService: BoardService,
+              // tslint:disable-next-line:variable-name
+              private _location: Location) { }
 
   ngOnInit() {
     this.boardService.getBoards().subscribe(data => {
@@ -29,4 +32,7 @@ export class BoardListComponent implements OnInit {
     });
   }
 
+  backClicked() {
+    this._location.back();
+  }
 }
