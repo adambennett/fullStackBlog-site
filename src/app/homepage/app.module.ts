@@ -27,6 +27,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/board-list', pathMatch: 'full' },
@@ -105,7 +106,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatSelectModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [PostService, GiphyService],
   bootstrap: [AppComponent]

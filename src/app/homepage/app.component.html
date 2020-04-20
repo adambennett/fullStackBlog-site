@@ -1,9 +1,37 @@
 <mat-toolbar color="primary">
-  <span class = "title">Loopy Blog</span>
-  <span class = "accountButtons">
-    |<button>Login</button>|<button>Register</button>|
-  </span>
+  <mat-toolbar-row>
+    <span class="span">Loopy Blog</span>
+  </mat-toolbar-row>
 
+  <mat-toolbar-row>
+    <button mat-menu-item [routerLink]="['/']" class = "homeBtn">Home</button>
+    <button mat-menu-item [matMenuTriggerFor]="accountMenu" class = "boardBtn">Account</button>
+    <mat-menu #accountMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/user-login']">Login</button>
+      <button mat-menu-item [routerLink]="['/user-register']">Register</button>
+      <button mat-menu-item [routerLink]="['/']">Logout</button>
+      <button mat-menu-item [routerLink]="['/user-settings']">Account Settings</button>
+    </mat-menu>
+    <button mat-menu-item [matMenuTriggerFor]="boardMenu" class = "boardBtn">Boards</button>
+    <mat-menu #boardMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/board-list']">View All Boards</button>
+      <button mat-menu-item [routerLink]="['/board-add']">Add New Board</button>
+    </mat-menu>
+    <button mat-menu-item [matMenuTriggerFor]="postMenu" class = "postBtn">Posts</button>
+    <mat-menu #postMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/post-add']">Submit Post</button>
+      <button mat-menu-item [routerLink]="['/post-list']">View All Posts</button>
+    </mat-menu>
+    <button mat-menu-item [matMenuTriggerFor]="searchMenu" class = "searchBtn">Search</button>
+    <mat-menu #searchMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/search-post-title']">Find By: Post Title</button>
+      <button mat-menu-item [routerLink]="['/search-post-author']">Find By: Post Author</button>
+      <button mat-menu-item [routerLink]="['/search-post-time']">Find By: Post Time</button>
+      <button mat-menu-item [routerLink]="['/search-post-text']">Find By: Post Text</button>
+      <button mat-menu-item [routerLink]="['/search-tags']">Find By: Tags</button>
+      <button mat-menu-item [routerLink]="['/search-boards']">Find By: Boards</button>
+    </mat-menu>
+  </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
 
