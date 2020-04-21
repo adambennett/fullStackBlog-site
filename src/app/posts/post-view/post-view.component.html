@@ -1,8 +1,12 @@
 <mat-card>
   <mat-card-content>
-    {{post.header}}
+    <td class="post-header">
+      {{post.header}}
+    </td>
     <br><br><br>
-    {{post.text}}
+    <td class="post-text">
+      {{post.text}}
+    </td>
     <br><br><br>
     {{post.author}} @ {{post.createTimestamp}}
     <br><br>
@@ -15,16 +19,15 @@
     <button mat-raised-button color="warn" [routerLink]="['/post-delete', post.id]" class="postBtn">Delete</button>
     <br><br>
   </mat-card-content>
-  <mat-card-content>
-    Comments
+  <mat-card-content class="border">
+    <td class="comment-header">Comments</td>
     <br><br>
-    <mat-list dense>
-      <mat-list-item *ngFor="let comment of post.comments">
-        <h3 mat-line>{{comment.text}}</h3>
-        <h3 mat-line><br></h3>
-        <h3 mat-line>{{comment.author}} @ {{comment.createTimestamp}}</h3>
-      </mat-list-item>
-    </mat-list>
+    <mat-list-item *ngFor="let comment of post.comments" class="comment-box">
+      <td class="comment-text">{{comment.text}}</td>
+      <br>
+      <td class="comment-author"><br>{{comment.author}} @ {{comment.createTimestamp}}</td>
+      <br><br><br>
+    </mat-list-item>
   </mat-card-content>
 </mat-card>
 
