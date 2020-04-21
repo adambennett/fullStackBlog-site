@@ -17,12 +17,18 @@
                required name="author" #author>
       </mat-form-field>
       <br>
+      <mat-form-field>
+        <mat-label>Image URL</mat-label>
+        <input matInput placeholder="Image" [(ngModel)]="post.imageUrl"
+               name="imageUrl" #imageUrl>
+      </mat-form-field>
+      <br>
       <mat-form-field appearance="fill">
           <textarea matInput placeholder="Text" [(ngModel)]="post.text" required name="text" #text></textarea>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <mat-select placeholder="Board" [formControl]="formControlObj" [(ngModel)]="selectedValue">
+        <mat-select required placeholder="Board" [formControl]="formControlObj" [(ngModel)]="selectedValue">
           <mat-option *ngFor="let board of boards" [value]="board.id">
             {{board.title}}
           </mat-option>
@@ -30,8 +36,7 @@
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit" [disabled]="!postForm.form.valid">Submit Post</button>
-      <a mat-button routerLink="/board-list">Cancel</a>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!postForm.form.valid || selectedValue == null">Submit Post</button>     <a mat-button routerLink="/board-list">Cancel</a>
     </mat-card-actions>
   </form>
 </mat-card>

@@ -4,10 +4,17 @@
       {{post.header}}
     </td>
     <br><br><br>
+    <br>
     <td class="post-text">
       {{post.text}}
     </td>
-    <br><br><br>
+    <br><br>
+    <div style="overflow:hidden;">
+    <img style="float: right" src="{{post.imageUrl}}" onerror="this.src='https://imgur.com/l1RlOPD'" alt="An image associated with the post.">
+    </div>
+    <br>
+  </mat-card-content>
+  <mat-card-content>
     {{post.author}} @ {{post.createTimestamp}}
     <br><br>
     Last Updated: {{post.updateTimestamp}}

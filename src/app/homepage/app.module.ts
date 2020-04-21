@@ -43,7 +43,7 @@ import { SearchTagsComponent } from '../search/search-tags/search-tags.component
 import { SearchBoardsComponent } from '../search/search-boards/search-boards.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/board-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/post-list', pathMatch: 'full' },
   {
     path: 'post-list',
     component: PostListComponent
