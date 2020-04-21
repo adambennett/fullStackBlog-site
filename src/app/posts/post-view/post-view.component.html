@@ -21,9 +21,9 @@
     <br><br>
   </mat-card-content>
   <mat-card-content>
-    <button mat-raised-button color="accent" [routerLink]="['/post-comment', post.id]" class="postBtn">Comment</button>
-    <button mat-raised-button color="accent" [routerLink]="['/post-edit', post.id]" class="postBtn">Edit</button>
-    <button mat-raised-button color="warn" [routerLink]="['/post-delete', post.id]" class="postBtn">Delete</button>
+    <a [routerLink]="['/post-comment', post.id]" class="postBtn"><span><span><span>Comment</span></span></span></a>
+    <a [routerLink]="['/post-edit', post.id]" class="postBtn"><span><span><span>Edit</span></span></span></a>
+    <a [routerLink]="['/post-delete', post.id]" class="postBtnDel"><span><span><span>Delete</span></span></span></a>
     <br><br>
   </mat-card-content>
   <mat-card-content class="border">
