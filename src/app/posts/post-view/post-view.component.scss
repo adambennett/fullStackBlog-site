@@ -46,7 +46,7 @@
 .comment-box {
 
 }
-
+/*
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
   $easing: cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -348,7 +348,63 @@ a {
     }
   }
 }
+*/
+//.postBtnDel {
+//  @include btn-del-border-slide(#252525, #168dff, 5px, 0.8s)
+//}
 
-.postBtnDel {
-  @include btn-del-border-slide(#252525, #168dff, 5px, 0.8s)
+.postBtnDel{
+  display: inline-block;
+  border: none;
+  color: #FFF;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  font-family: Verdana;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  padding: 10px 40px;
+  box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #673ab7,0px 8px 5px 0 #B3B3B3;
+  -moz-box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #673ab7,0px 8px 5px 0 #B3B3B3;
+  -webkit-box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #673ab7,0px 8px 5px 0 #B3B3B3;
+  text-shadow: 0 1px 0 #48576D;
+  background-image: linear-gradient(to top, #673ab7, #f44336);
+  background-color: #4471a9;
+}
+.postBtnDel:hover, .btn-class:active{
+  border: none;
+  color: #FFF;
+  box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #223955,0px 4px 3px 0 #6B6B6B;
+  -moz-box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #223955,0px 4px 3px 0 #6B6B6B;
+  -webkit-box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #223955,0px 4px 3px 0 #6B6B6B;
+  background-color: #f44336;
+}
+
+.postBtn{
+  display: inline-block;
+  border: none;
+  color: #FFF;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  font-family: Verdana;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  padding: 10px 40px;
+  box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #673ab7,0px 8px 5px 0 #B3B3B3;
+  -moz-box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #673ab7,0px 8px 5px 0 #B3B3B3;
+  -webkit-box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #673ab7,0px 8px 5px 0 #B3B3B3;
+  text-shadow: 0 1px 0 #48576D;
+  background-image: linear-gradient(to top, #673ab7, #ffd740);
+  background-color: #4471a9;
+}
+.postBtn:hover, .btn-class:active{
+  border: none;
+  color: #FFF;
+  box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #673ab7,0px 4px 3px 0 #6B6B6B;
+  -moz-box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #673ab7,0px 4px 3px 0 #6B6B6B;
+  -webkit-box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #673ab7,0px 4px 3px 0 #6B6B6B;
+  background-color: #ffd740;
 }
