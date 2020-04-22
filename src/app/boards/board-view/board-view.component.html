@@ -3,7 +3,7 @@
   <ng-container matColumnDef="header">
     <th mat-header-cell *matHeaderCellDef mat-sort-header class="title-header"> Title </th>
     <td mat-cell *matCellDef="let post" class="title-row">
-      <button mat-raised-button color="accent" [routerLink]="['/post-view', post.id]">{{post.header}}</button>
+      <a [routerLink]="['/post-view', post.id]" class="post-title"><span><span><span>{{post.header}}</span></span></span></a>
     </td>
   </ng-container>
 
