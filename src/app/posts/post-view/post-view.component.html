@@ -3,15 +3,15 @@
     <td class="post-header">
       {{post.header}}
     </td>
-    <br><br><br>
+    <br>
+    <div style="overflow:hidden;">
+      <img style="vertical-align:middle" src="{{post.imageUrl}}" onerror="this.src='https://imgur.com/l1RlOPD'" alt="An image associated with the post.">
+    </div>
     <br>
     <td class="post-text">
       {{post.text}}
     </td>
-    <br><br>
-    <div style="overflow:hidden;">
-    <img style="float: right" src="{{post.imageUrl}}" onerror="this.src='https://imgur.com/l1RlOPD'" alt="An image associated with the post.">
-    </div>
+    <br>
     <br>
   </mat-card-content>
   <mat-card-content>
