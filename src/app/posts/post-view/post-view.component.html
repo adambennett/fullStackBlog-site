@@ -31,11 +31,13 @@
   <mat-card-content class="border">
     <td class="comment-header">Comments</td>
     <br><br>
-    <mat-list-item *ngFor="let comment of post.comments" class="comment-box">
+    <mat-list-item *ngFor="let comment of post.comments">
+      <mat-card-content class="comment-box">
       <td class="comment-text">{{comment.text}}</td>
       <br>
       <td class="comment-author"><br>{{comment.author}} @ {{comment.createTimestamp}}</td>
       <br><br><br>
+      </mat-card-content>
     </mat-list-item>
   </mat-card-content>
 </mat-card>

@@ -34,14 +34,14 @@
   color: darkorange;
 }
 
-.comment-author {
-  //border-style: dotted dashed solid double;
-  //border-color: tomato;
-  //border-width: 5px;
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
-}
+//.comment-author {
+//  //border-style: dotted dashed solid double;
+//  //border-color: tomato;
+//  //border-width: 5px;
+//  border: 10px solid transparent;
+//  padding: 15px;
+//  border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
+//}
 
 .comment-box {
 
@@ -290,3 +290,59 @@ a {
 
 }
 
+.comment-box {
+
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 20px rgb(103, 58, 183);
+  border: 2px solid #2a3cad;
+  color: white;
+  padding: 2px;
+}
+
+.comment-box span{
+  //position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+
+}
+
+.comment-box span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.comment-box span:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+.comment-box span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+.comment-box span:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+.comment-box span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 5px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  //background: #00ff00;
+  animation: animate 4s alternate infinite;
+
+}
