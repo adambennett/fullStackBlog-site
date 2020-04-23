@@ -1,4 +1,4 @@
 # fullStackBlog
-Full Stack Blogging application by Zipcode Wilmington Cohort 6.0 members
+Angular frontend project that supports the FullStackBlog API program.
 
-Add more later to this.
+Can be viewed live via Heroku deployment at: https://loopyblog.herokuapp.com/
