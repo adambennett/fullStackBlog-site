@@ -28,11 +28,12 @@
     <button [routerLink]="['/post-delete', post.id]" class="postBtnDel"><span><span><span>Delete</span></span></span></button>
     <br><br>
   </mat-card-content>
-  <mat-card-content class="border">
+  <mat-card-content>
     <td class="comment-header">Comments</td>
     <br><br>
     <mat-list-item *ngFor="let comment of post.comments">
       <mat-card-content class="comment-box">
+        <br>
       <td class="comment-text">{{comment.text}}</td>
       <br>
       <td class="comment-author"><br>{{comment.author}} @ {{comment.createTimestamp}}</td>

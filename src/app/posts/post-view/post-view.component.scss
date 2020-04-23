@@ -27,7 +27,8 @@
 }
 
 .comment-header {
-  font-size: 14pt;
+  font-size: 22pt;
+  color: #00FF00;
 }
 
 .comment-text {
@@ -43,9 +44,6 @@
 //  border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
 //}
 
-.comment-box {
-
-}
 
 
 .postBtnDel{
@@ -292,13 +290,13 @@ a {
 
 .comment-box {
 
-  width: 100%;
+  width: 50%;
   height: 100%;
   background: transparent;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 0 20px 20px rgb(103, 58, 183);
-  border: 2px solid #2a3cad;
+  box-shadow: 10px 10px 10px rgb(0, 255, 0);
+  border: 2px solid #002fff;
   color: white;
   padding: 2px;
 }
@@ -346,3 +344,5 @@ a {
   animation: animate 4s alternate infinite;
 
 }
+
+
