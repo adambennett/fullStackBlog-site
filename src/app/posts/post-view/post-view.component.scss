@@ -21,337 +21,30 @@
   //border-style: dotted dashed solid double;
   //border-color: blue;
   //border-width: 10px;
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
+  //border: 10px solid transparent;
+  //padding: 15px;
+  //border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
 }
 
 .comment-header {
-  font-size: 14pt;
+  font-size: 22pt;
+  color: #00FF00;
 }
 
 .comment-text {
   color: darkorange;
 }
 
-.comment-author {
-  //border-style: dotted dashed solid double;
-  //border-color: tomato;
-  //border-width: 5px;
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
-}
-
-.comment-box {
-
-}
-/*
-@mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
-  $easing: cubic-bezier(0.4, 0, 0.2, 1);
-
-  position: relative;
-
-  display: inline-block;
-  padding: 0.5em 2em;
-
-  cursor: pointer;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-
-    height: $borderWidth;
-    width: 100%;
-
-    background-color: $color;
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    bottom: 0;
-  }
-
-  &:hover {
-
-    & > * {
-
-      & > * {
-
-        &:before,
-        &:after {
-          transform: translate3d(0, 0, 0);
-        }
-
-        & > * {
-          &:before,
-          &:after {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-      }
-    }
-  }
-
-  & > * {
-
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-
-      height: 100%;
-      width: $borderWidth;
-
-      background-color: $color;
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
-
-    & > * {
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 9;
-
-        height: $borderWidth;
-        width: 100%;
-
-        background-color: #ffd740;
-      }
-
-      &:before {
-        top: 0;
-
-        transform: translate3d(-105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      &:after {
-        bottom: 0;
-
-        transform: translate3d(105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      & > * {
-
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          z-index: 9;
-
-          height: 100%;
-          width: $borderWidth;
-
-          background-color: #ffd740;
-        }
-
-        &:before {
-          left: 0;
-
-          transform: translate3d(0, 105%, 0);
-          transition: transform $time $easing;
-        }
-
-        &:after {
-          right: 0;
-
-          transform: translate3d(0, -105%, 0);
-          transition: transform $time $easing;
-        }
-      }
-    }
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: #f2f2f2;
-}
-
-a {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  color: #f2f2f2;
-  background-color: #673ab7;
-
-}
-
-.postBtn {
-  @include btn-border-slide(#252525, #168dff, 5px, 0.8s)
-}
-
-@mixin btn-del-border-slide($color, $hoverColor, $borderWidth, $time) {
-  $easing: cubic-bezier(0.4, 0, 0.2, 1);
-
-  position: relative;
-
-  display: inline-block;
-  padding: 0.5em 2em;
-
-  cursor: pointer;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-
-    height: $borderWidth;
-    width: 100%;
-
-    background-color: $color;
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    bottom: 0;
-  }
-
-  &:hover {
-
-    & > * {
-
-      & > * {
-
-        &:before,
-        &:after {
-          transform: translate3d(0, 0, 0);
-        }
-
-        & > * {
-          &:before,
-          &:after {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-      }
-    }
-  }
-
-  & > * {
-
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-
-      height: 100%;
-      width: $borderWidth;
-
-      background-color: $color;
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
-
-    & > * {
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 9;
-
-        height: $borderWidth;
-        width: 100%;
-
-        background-color: #f44336;
-      }
-
-      &:before {
-        top: 0;
-
-        transform: translate3d(-105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      &:after {
-        bottom: 0;
-
-        transform: translate3d(105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      & > * {
-
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          z-index: 9;
-
-          height: 100%;
-          width: $borderWidth;
-
-          background-color: #f44336;
-        }
-
-        &:before {
-          left: 0;
-
-          transform: translate3d(0, 105%, 0);
-          transition: transform $time $easing;
-        }
-
-        &:after {
-          right: 0;
-
-          transform: translate3d(0, -105%, 0);
-          transition: transform $time $easing;
-        }
-      }
-    }
-  }
-}
-*/
-//.postBtnDel {
-//  @include btn-del-border-slide(#252525, #168dff, 5px, 0.8s)
+//.comment-author {
+//  //border-style: dotted dashed solid double;
+//  //border-color: tomato;
+//  //border-width: 5px;
+//  border: 10px solid transparent;
+//  padding: 15px;
+//  border-image: url("https://www.w3schools.com/css/border.png") 30 stretch;
 //}
+
+
 
 .postBtnDel{
   display: inline-block;
@@ -409,27 +102,6 @@ a {
   background-color: #ffd740;
 }
 
-.block {
-  position: relative;
-  margin: 300px auto 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, #000, #272727);
-}
-
-.block:before, .block:after {
-  content: '';
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(45deg, #673ab7, #0000ff, #673ab7, #0000ff, #673ab7, #0000ff,
-    #673ab7, #0000ff,#673ab7, #0000ff);
-  background-size: 400%;
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
-  z-index: -1;
-  animation: steam 20s linear infinite;
-}
 
 @keyframes steam {
   0% {
@@ -447,151 +119,6 @@ a {
   filter: blur(50px);
 }
 
-
-
-@mixin content-border-slide($color, $hoverColor, $borderWidth, $time) {
-  $easing: cubic-bezier(0.4, 0, 0.2, 1);
-
-  position: relative;
-
-  display: inline-block;
-  padding: 0.5em 2em;
-
-  cursor: pointer;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-
-    height: $borderWidth;
-    width: 100%;
-
-
-    background-color: $color;
-
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    bottom: 0;
-  }
-
-  &:hover {
-
-    & > * {
-
-      & > * {
-
-        &:before,
-        &:after {
-          transform: translate3d(0, 0, 0);
-        }
-
-        & > * {
-          &:before,
-          &:after {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-      }
-    }
-  }
-
-  & > * {
-
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-
-      height: 100%;
-      width: $borderWidth;
-
-      background-color: $color;
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
-
-    & > * {
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 9;
-
-        height: $borderWidth;
-        width: 100%;
-
-        //background-color: #673ab7;
-        background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
-          #0000ff, #00ff00,#ffff00, #ff0000);
-        animation: steam 20s linear infinite;
-      }
-
-      &:before {
-        top: 0;
-
-        transform: translate3d(-105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      &:after {
-        bottom: 0;
-
-        transform: translate3d(105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      & > * {
-
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          z-index: 9;
-
-          height: 100%;
-          width: $borderWidth;
-
-          //background-color: #673ab7;
-          background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
-            #0000ff, #00ff00,#ffff00, #ff0000);
-          animation: steam 20s linear infinite;
-        }
-
-        &:before {
-          left: 0;
-
-          transform: translate3d(0, 105%, 0);
-          transition: transform $time $easing;
-        }
-
-        &:after {
-          right: 0;
-
-          transform: translate3d(0, -105%, 0);
-          transition: transform $time $easing;
-        }
-      }
-    }
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -619,45 +146,17 @@ a {
 
 }
 
-@keyframes animate {
-  0% {
-    transform:scaleX(0);
-    transform-origin: left;
-  }
-  50%
-  {
-    transform:scaleX(1);
-    transform-origin: left;
-  }
-  50.1%
-  {
-    transform:scaleX(1);
-    transform-origin: right;
-
-  }
-
-  100%
-  {
-    transform:scaleX(0);
-    transform-origin: right;
-
-  }
-
-}
-
 .content-border {
-
-  //@include content-border-slide(#252525, #168dff, 5px, 1s)
 
   width: 100%;
   height: 100%;
   background: transparent;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgb(0, 250, 0);
+  box-shadow: 0 20px 20px rgb(103, 58, 183);
   border: 2px solid #2a3cad;
   color: white;
-  padding: 20px;
+  padding: 2px;
 }
 
 .content-border span{
@@ -695,11 +194,13 @@ a {
 {
   content: '';
   position: absolute;
-  width:95%;
-  height: 2px;
+  width:100%;
+  height: 5px;
   background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
     #0000ff, #00ff00,#ffff00, #ff0000);
-  animation: animate 4s linear infinite;
+  //background: #00ff00;
+  animation: animate 4s alternate infinite;
+
 }
 
 @keyframes animate {
@@ -726,6 +227,121 @@ a {
 
   }
 
+
+}
+
+
+.border {
+
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 20px rgb(103, 58, 183);
+  border: 2px solid #2a3cad;
+  color: white;
+  padding: 2px;
+}
+
+.border span{
+  //position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+
+}
+
+.border span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.border span:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+.border span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+.border span:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+.border span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 5px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  //background: #00ff00;
+  animation: animate 4s alternate infinite;
+
+}
+
+.comment-box {
+
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgb(0, 255, 0);
+  border: 2px solid #002fff;
+  color: white;
+  padding: 2px;
+}
+
+.comment-box span{
+  //position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+
+}
+
+.comment-box span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.comment-box span:nth-child(2)
+{
+  transform:rotate(90deg);
+}
+
+.comment-box span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+.comment-box span:nth-child(4)
+{
+  transform:rotate(270deg);
+}
+
+.comment-box span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 5px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094,
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  //background: #00ff00;
+  animation: animate 4s alternate infinite;
 
 }
 
