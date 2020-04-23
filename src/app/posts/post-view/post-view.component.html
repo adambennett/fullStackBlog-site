@@ -1,20 +1,20 @@
 <mat-card>
   <mat-card-content class="content-border">
     <span><span><span>
-    <td class="post-header">
-      {{post.header}}
-    </td>
-    <br>
-    <div style="overflow:hidden;">
-      <img style="vertical-align:middle" src="{{post.imageUrl}}" onerror="this.src='https://imgur.com/l1RlOPD'" alt="An image associated with the post.">
-    </div>
-    <br>
-    <td class="post-text">
-      {{post.text}}
-    </td>
-    <br>
-    <br>
-      </span></span></span>
+     <td class="post-header">
+        {{post.header}}
+      </td>
+      <br>
+      <div style="overflow:hidden;">
+        <img style="vertical-align:middle" src="{{post.imageUrl}}" onerror="this.src='https://imgur.com/l1RlOPD'" alt="An image associated with the post.">
+      </div>
+      <br>
+      <td class="post-text">
+        {{post.text}}
+      </td>
+      <br>
+      <br>
+    </span></span></span>
   </mat-card-content>
   <mat-card-content>
     {{post.author}} @ {{post.createTimestamp}}
