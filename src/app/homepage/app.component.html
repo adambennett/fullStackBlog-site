@@ -7,7 +7,7 @@
     <button mat-menu-item [routerLink]="['/']" class = "homeBtn">Home</button>
     <button mat-menu-item [matMenuTriggerFor]="accountMenu" class = "boardBtn">Account</button>
     <mat-menu #accountMenu="matMenu">
-      <button mat-menu-item [routerLink]="['/user-login', 1]">Login/Logout</button>
+      <button mat-menu-item [routerLink]="['/user-login', 1]">Login</button>
       <button mat-menu-item [routerLink]="['/user-register', 1]">Register</button>
       <button mat-menu-item [routerLink]="['/user-settings', 1]">Account Settings</button>
     </mat-menu>
@@ -23,12 +23,7 @@
     </mat-menu>
     <button mat-menu-item [matMenuTriggerFor]="searchMenu" class = "searchBtn">Search</button>
     <mat-menu #searchMenu="matMenu">
-      <button mat-menu-item [routerLink]="['/search-post-title']">Find By: Post Title</button>
-      <button mat-menu-item [routerLink]="['/search-post-author']">Find By: Post Author</button>
-      <button mat-menu-item [routerLink]="['/search-post-time']">Find By: Post Time</button>
-      <button mat-menu-item [routerLink]="['/search-post-text']">Find By: Post Text</button>
       <button mat-menu-item [routerLink]="['/search-tags']">Find By: Tags</button>
-      <button mat-menu-item [routerLink]="['/search-boards']">Find By: Boards</button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
