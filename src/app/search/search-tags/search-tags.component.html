@@ -4,10 +4,12 @@
       <textarea matInput placeholder="Tags" [(ngModel)]="myTags" name="myTags"></textarea>
     </mat-form-field>
   </mat-card-content>
-  <button mat-raised-button color="primary" (click)="search(checked)" [disabled]="myTags == ''">Search</button>
-  <mat-checkbox class="filterBox" [(ngModel)]="checked">Match All</mat-checkbox>
-  <a mat-raised-button (click)="backClicked()">Return</a>
 
+  <button mat-raised-button color="primary" (click)="search(checked)" [disabled]="myTags == ''" class="button"><span><span><span>Search</span></span></span></button>
+  <button mat-raised-button (click)="backClicked()" class="button"><span><span><span>Return</span></span></span></button>
+  <br><br>
+  <mat-checkbox class="filterBox" [(ngModel)]="checked">Match All</mat-checkbox>
+  <br><br>
   <mat-card-content>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 

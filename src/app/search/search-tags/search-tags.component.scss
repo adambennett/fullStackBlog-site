@@ -234,3 +234,32 @@ a {
 
   @include btn-border-slide(#252525, #168dff, 5px, 0.5s)
 }
+
+.button {
+  display: inline-block;
+  border: none;
+  color: #FFF;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  font-family: Verdana;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  padding: 10px 40px;
+  box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #3b134e,0px 8px 5px 0 #B3B3B3;
+  -moz-box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #3b134e,0px 8px 5px 0 #B3B3B3;
+  -webkit-box-shadow: inset 0px 1px 1px 0 #90ADD2,0px 5px 0px 0 #3b134e,0px 8px 5px 0 #B3B3B3;
+  text-shadow: 0 1px 0 #48576D;
+  background-image: linear-gradient(to top, #3b134e, #673ab7);
+  background-color: #4471a9;
+}
+
+.button:hover{
+  border: none;
+  color: #FFF;
+  box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #3b134e,0px 4px 3px 0 #6B6B6B;
+  -moz-box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #3b134e,0px 4px 3px 0 #6B6B6B;
+  -webkit-box-shadow: inset 0px 1px 0px 0 #90ADD2,0px 2px 0px 0 #3b134e,0px 4px 3px 0 #6B6B6B;
+  background-color: #ffd740;
+}
