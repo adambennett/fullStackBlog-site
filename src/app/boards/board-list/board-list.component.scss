@@ -17,10 +17,18 @@ mat-table{
   font-size: 22pt;
 }
 
-
 .table-header-row {
   height: 5px !important;
   font-size: 30pt !important;
+}
+
+.comment-length {
+  font-size: 22pt;
+
+}
+
+.comment-number-row {
+  font-size: 22pt;
 }
 
 .mat-column-title {
@@ -220,3 +228,4 @@ a {
 
   @include btn-border-slide(#252525, #168dff, 5px, 0.5s)
 }
+
