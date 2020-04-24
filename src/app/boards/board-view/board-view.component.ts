@@ -37,7 +37,7 @@ export class BoardViewComponent implements OnInit, OnDestroy {
         this.boardService.get(id).subscribe((board: any) => {
           if (board) {
             this.posts = board.posts;
-            this.dataSource = new MatTableDataSource<any>(this.posts);
+            this.dataSource = new MatTableDataSource<any>(this.posts.slice().reverse());
             this.dataSource.paginator = this.paginator;
             this.dataSource.sort = this.sort;
           } else {

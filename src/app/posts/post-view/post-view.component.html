@@ -17,10 +17,12 @@
     </span></span></span>
   </mat-card-content>
   <mat-card-content>
-    {{post.author}} @ {{post.createTimestamp}}
+    {{post.author}} @ {{ post.createTimestamp | date:'medium' }}
     <br><br>
-    Last Updated: {{post.updateTimestamp}}
+    Last Updated: {{ post.updateTimestamp | date:'medium' }}
     <br><br>
+    Tags: <div *ngFor="let tag of post.tags">#{{tag.name}}</div>
+    <br>
   </mat-card-content>
   <mat-card-content>
     <button [routerLink]="['/post-comment', post.id]" class="postBtn"><span><span><span>Comment</span></span></span></button>
@@ -36,7 +38,7 @@
         <br>
       <td class="comment-text">{{comment.text}}</td>
       <br>
-      <td class="comment-author"><br>{{comment.author}} @ {{comment.createTimestamp}}</td>
+      <td class="comment-author"><br>{{comment.author}} @ {{ comment.createTimestamp | date:'medium' }}</td>
       <br><br><br>
       </mat-card-content>
     </mat-list-item>
