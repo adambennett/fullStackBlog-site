@@ -41,6 +41,7 @@ import { SearchPostTimeComponent } from '../search/search-post-time/search-post-
 import { SearchPostTextComponent } from '../search/search-post-text/search-post-text.component';
 import { SearchTagsComponent } from '../search/search-tags/search-tags.component';
 import { SearchBoardsComponent } from '../search/search-boards/search-boards.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/post-list', pathMatch: 'full' },
@@ -155,26 +156,27 @@ const appRoutes: Routes = [
     SearchTagsComponent,
     SearchBoardsComponent
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatListModule,
-    MatToolbarModule,
-    FormsModule,
-    MatFormFieldModule,
-    RouterModule.forRoot(appRoutes),
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatMenuModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule
-  ],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatListModule,
+        MatToolbarModule,
+        FormsModule,
+        MatFormFieldModule,
+        RouterModule.forRoot(appRoutes),
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatMenuModule,
+        MatTableModule,
+        MatSortModule,
+        MatPaginatorModule,
+        MatCheckboxModule
+    ],
   providers: [PostService, GiphyService],
   bootstrap: [AppComponent]
 })

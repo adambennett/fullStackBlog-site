@@ -27,6 +27,10 @@
           <textarea matInput placeholder="Text" [(ngModel)]="post.text" required name="text" #text></textarea>
       </mat-form-field>
       <br>
+      <mat-form-field appearance="fill">
+        <textarea matInput placeholder="Tags" [(ngModel)]="myTags" name="myTags"></textarea>
+      </mat-form-field>
+      <br>
       <mat-form-field>
         <mat-select required placeholder="Board" [formControl]="formControlObj" [(ngModel)]="selectedValue">
           <mat-option *ngFor="let board of boards" [value]="board.id">

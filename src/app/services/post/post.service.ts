@@ -19,8 +19,8 @@ export class Post {
 })
 export class PostService {
 
-  public API = 'https://loopy-api.herokuapp.com/api/';
-  // public API = 'http://localhost:8080/api/';
+ //  public API = 'https://loopy-api.herokuapp.com/api/';
+  public API = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) { }
 
@@ -28,16 +28,20 @@ export class PostService {
     return this.http.get(this.API + 'posts/list');
   }
 
+  getPostsByTag(tags: string, filter: string): Observable<any> {
+    return this.http.get(this.API + 'posts/tag', { params: {search: tags, all: filter } });
+  }
+
   get(id: number) {
     return this.http.get(this.API + 'posts/' + id);
   }
 
-  save(post: any, id: number): Observable<any> {
+  save(post: any, id: number, tags: string): Observable<any> {
     let result: Observable<any>;
     if (post.href) {
       result = this.http.put(post.href, post);
     } else {
-      result = this.http.post(this.API + 'posts/' + id, post);
+      result = this.http.post(this.API + 'posts/' + id, post, { params: {tag: tags} });
     }
     return result;
   }

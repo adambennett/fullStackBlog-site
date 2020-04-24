@@ -18,6 +18,7 @@ export class PostAddComponent implements OnInit, OnDestroy {
   post: any = {};
   boards: Array<any>;
   selectedValue: number;
+  myTags = '';
 
   sub: Subscription;
 
@@ -58,7 +59,7 @@ export class PostAddComponent implements OnInit, OnDestroy {
   }
 
   save(form: NgForm, id: number) {
-    this.postService.save(form, id).subscribe(result => {
+    this.postService.save(form, id, this.myTags).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
   }

@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class BoardService {
 
-  public API = 'https://loopy-api.herokuapp.com/api/';
-  // public API = 'http://localhost:8080/api/';
+  //  public API = 'https://loopy-api.herokuapp.com/api/';
+  public API = 'http://localhost:8080/api/';
 
   constructor(private http: HttpClient) { }
 
