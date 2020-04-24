@@ -16,55 +16,58 @@
 .title-row {
   height: 5px !important;
   font-size: 14pt !important;
-  width: 650px !important;
+  width: 30%;
 }
 
 .author-header {
   height: 5px !important;
   font-size: 30pt !important;
-  width: 200px !important;
+  width: 20%;
 }
 
 .author-row {
   height: 5px !important;
   font-size: 14pt !important;
-  width: 200px !important;
+
 }
 
 .time-header {
   height: 5px !important;
   font-size: 30pt !important;
-  width: 400px !important;
-
+  width: 20%;
 }
 
 .time-row {
   height: 5px !important;
-  font-size: 14pt !important;
-  width: 400px !important;
+  font-size: 12pt !important;
+  width: 20%;
 }
 
 .board-header {
   height: 5px !important;
   font-size: 30pt !important;
+  width: 20%;
+
 }
 
 .board-row {
   height: 5px !important;
   font-size: 14pt !important;
-  text-align: center !important;
+
+
 }
 
 .comment-header {
   height: 5px !important;
   font-size: 30pt !important;
+  width: 20%;
 }
 
 .comment-row {
   height: 5px !important;
   font-size: 14pt !important;
-  width: 10px !important;
-  text-align: center !important;
+  width: 20% !important;
+
 }
 
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {

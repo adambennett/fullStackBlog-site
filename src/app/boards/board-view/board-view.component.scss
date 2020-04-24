@@ -9,25 +9,25 @@
 .title-header {
   height: 5px !important;
   font-size: 30pt !important;
-  width: 350px !important;
+  width: 650px !important;
 }
 
 .title-row {
   height: 5px !important;
   font-size: 14pt !important;
-  width: 350px !important;
+  width: 35%;
 }
 
 .author-header {
   height: 5px !important;
   font-size: 30pt !important;
-  width: 200px !important;
+
 }
 
 .author-row {
   height: 5px !important;
   font-size: 14pt !important;
-  width: 200px !important;
+
 }
 
 .time-header {
@@ -38,19 +38,19 @@
 .time-row {
   height: 5px !important;
   font-size: 14pt !important;
-  text-align: center !important;
+
 }
 
 .comment-header {
   height: 5px !important;
   font-size: 30pt !important;
+  width: 25%;
 }
 
 .comment-row {
   height: 5px !important;
   font-size: 14pt !important;
-  width: 10px !important;
-  text-align: center !important;
+  width: 25%;
 }
 
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
